@@ -43,7 +43,7 @@ const values = [
 ];
 
 const team = [
-  { name: "Prophet Original", role: "Lead Pastor" },
+  { name: "Prophet Original", role: "Lead Pastor", image: "/img/p2.jpg" },
 ];
 
 export default function About() {
@@ -148,7 +148,7 @@ export default function About() {
 
             <div className="mt-8">
               <p className="text-xl font-semibold text-[#111111]">
-               Prophet Original
+                Prophet Original
               </p>
               <p className="text-sm uppercase tracking-widest text-yellow-600">
                 Lead Pastor
@@ -210,11 +210,14 @@ export default function About() {
           <div className="team-grid grid grid-cols-2 gap-8 lg:grid-cols-4">
             {team.map((member) => (
               <div key={member.name} className="team-card text-center">
-                <div className="mx-auto flex aspect-square w-full max-w-[160px] items-center justify-center rounded-full border-4 border-yellow-500/20 bg-gradient-to-br from-[#111111] to-[#2a2a2a] text-2xl font-bold text-yellow-500/40">
-                  {member.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
+                <div className="relative mx-auto aspect-square w-full max-w-[160px] overflow-hidden rounded-full border-4 border-yellow-500/20">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    sizes="160px"
+                  />
                 </div>
                 <h3 className="mt-4 text-base font-bold text-[#111111]">
                   {member.name}

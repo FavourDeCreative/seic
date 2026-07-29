@@ -19,12 +19,12 @@ const info = [
   {
     icon: HiOutlineLocationMarker,
     title: "Our Location",
-    lines: ["12 Salvation Way", "Lagos, Nigeria"],
+    lines: ["58 Olatunde Street, Oke-ira, Lagos, Nigeria"],
   },
   {
     icon: HiOutlinePhone,
     title: "Phone",
-    lines: ["+234 800 000 0000", "Office Hours: Mon–Thu, 9am–4pm"],
+    lines: ["+234 7082272802", "Office Hours: Mon–Thu, 9am–4pm"],
   },
   {
     icon: HiOutlineMail,
