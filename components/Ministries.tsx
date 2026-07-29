@@ -74,7 +74,7 @@ export default function Ministries() {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {ministries.map((ministry) => {
-            const Icon = ministry.icon;
+            const Icon = ministry.image;
             return (
               <div
                 key={ministry.title}
