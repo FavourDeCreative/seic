@@ -1,15 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   HiOutlineArrowRight,
-  HiOutlineUserGroup,
-  HiOutlineMusicNote,
-  HiOutlineHeart,
-  HiOutlineBookOpen,
 } from "react-icons/hi";
 
 if (typeof window !== "undefined") {
@@ -19,7 +16,7 @@ if (typeof window !== "undefined") {
 const ministries = [
   {
     title: "City of Peace And Completeness Ministry",
-    icon: HiOutlineUserGroup,
+    image: "/img/logo2.png",
     description:
       "Peace citizen, That is who i am",
     schedule: "Sundays, 9AM & 11AM",
@@ -83,8 +80,14 @@ export default function Ministries() {
                 key={ministry.title}
                 className="ministry-card group rounded-2xl border border-black/5 bg-white p-8 shadow-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-yellow-500/10 text-yellow-600 transition-colors group-hover:bg-yellow-500 group-hover:text-black">
-                  <Icon className="h-7 w-7" />
+                <div className="mb-6 flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl border border-yellow-500/20 bg-white p-2 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                  <Image
+                    src={ministry.image}
+                    alt={ministry.title}
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-[#111111]">
                   {ministry.title}
@@ -100,14 +103,14 @@ export default function Ministries() {
           })}
         </div>
 
-        <div className="mt-10 text-center sm:hidden">
+        {/* <div className="mt-10 text-center sm:hidden">
           <Link
             href="#contact"
             className="inline-flex items-center gap-2 rounded-full border border-[#111111]/15 px-6 py-3 text-sm font-semibold text-[#111111]"
           >
             Get Connected <HiOutlineArrowRight />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );
