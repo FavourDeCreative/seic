@@ -6,20 +6,20 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
-// Replace with your actual YouTube channel or live URL
 const YOUTUBE_CHANNEL_URL =
   "https://www.youtube.com/@SalvationEmpireChurchIntl/streams";
 
 export default function Hero() {
-  const heroRef = useRef<HTMLElement | null>(null);
-  const liveDotRef = useRef<HTMLSpanElement | null>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const liveDotRef = useRef<HTMLSpanElement>(null);
+
   const [isLive, setIsLive] = useState(false);
 
-  // Check YouTube live status on mount and every 60 seconds
+  // Check YouTube live status
   useEffect(() => {
     let cancelled = false;
 
-    const checkStatus = async () => {
+    async function checkStatus() {
       try {
         const res = await fetch("/api/youtube-live-status", {
           cache: "no-store",
@@ -35,7 +35,7 @@ export default function Hero() {
           setIsLive(false);
         }
       }
-    };
+    }
 
     checkStatus();
 
@@ -115,14 +115,19 @@ export default function Hero() {
       });
     }, heroRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
-  // Animate live indicator only while live
+  // Live indicator animation
   useEffect(() => {
-    if (!isLive || !liveDotRef.current) return;
+    if (!isLive) return;
 
-    const tween = gsap.to(liveDotRef.current, {
+    const dot = liveDotRef.current;
+    if (!dot) return;
+
+    const tween = gsap.to(dot, {
       scale: 1.8,
       opacity: 0,
       duration: 1.2,
@@ -130,7 +135,9 @@ export default function Hero() {
       repeat: -1,
     });
 
-    return () => tween.kill();
+    return () => {
+      tween.kill();
+    };
   }, [isLive]);
 
   return (
@@ -149,7 +156,7 @@ export default function Hero() {
 
         <div className="hero-glow absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-yellow-400/10 blur-[120px]" />
 
-        <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#F5D46A_1px,transparent_1px)] [background-size:28px_28px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(#F5D46A_1px,transparent_1px)] opacity-[0.06] [background-size:28px_28px]" />
       </div>
 
       {/* Content */}
@@ -193,7 +200,6 @@ export default function Hero() {
                   ref={liveDotRef}
                   className="absolute inline-flex h-full w-full rounded-full bg-red-500"
                 />
-
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-red-500" />
               </span>
               We're Live on YouTube
