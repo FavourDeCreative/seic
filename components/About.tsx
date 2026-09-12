@@ -43,7 +43,7 @@ const values = [
 ];
 
 const team = [
-  { name: "Prophet Original", role: "Lead Pastor", image: "/img/p2.jpg" },
+  { name: "Prophet Original - The Global Altar", role: "Lead Pastor", image: "/img/p2.jpg" },
 ];
 
 export default function About() {
@@ -148,7 +148,7 @@ export default function About() {
 
             <div className="mt-8">
               <p className="text-xl font-semibold text-[#111111]">
-                Prophet Original
+                Prophet Original - The Global Altar
               </p>
               <p className="text-sm uppercase tracking-widest text-yellow-600">
                 Lead Pastor

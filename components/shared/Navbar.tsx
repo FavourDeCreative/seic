@@ -172,7 +172,7 @@ export default function Navbar() {
                     scrolled ? "text-gray-600" : "text-gray-200"
                   }`}
                 >
-                  City of Peace
+                 CITY OF PEACE - The Global Altar
                 </p>
               </div>
             </a>
