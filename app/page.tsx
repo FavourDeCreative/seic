@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Ministries from "@/components/Ministries";
+import Gallery from "@/components/Gallery";
 import Sermons from "@/components/Sermons";
 import Contact from "@/components/Contact";
 
@@ -13,6 +14,8 @@ export default function HomePage() {
         <About />
 
         <Ministries />
+
+        <Gallery />
 
         <Sermons />
       
