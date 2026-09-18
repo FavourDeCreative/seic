@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { HiOutlineArrowRight, HiOutlinePlayCircle } from "react-icons/hi2";
+import { HiOutlineArrowRight } from "react-icons/hi2";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -78,7 +77,9 @@ export default function Sermons() {
             </h2>
           </div>
           <Link
-            href="/sermon"
+            href="https://www.youtube.com/@SalvationEmpire"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden items-center gap-2 rounded-full border border-[#111111]/15 px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:bg-[#111111] hover:text-white sm:inline-flex"
           >
             See All Sermons <HiOutlineArrowRight />
@@ -118,7 +119,9 @@ export default function Sermons() {
 
         <div className="mt-10 text-center sm:hidden">
           <Link
-            href="/sermon"
+            href="https://www.youtube.com/@SalvationEmpireChurchIntl"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-[#111111]/15 px-6 py-3 text-sm font-semibold text-[#111111]"
           >
             See All Sermons <HiOutlineArrowRight />
