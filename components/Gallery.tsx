@@ -1,11 +1,12 @@
 import Image from "next/image";
 
 const pictures = [
-	{ src: "/img/gallery-1.jpg", alt: "SEIC gallery image 1", className: "md:col-span-2 md:row-span-2" },
-	{ src: "/img/gallery-2.jpg", alt: "SEIC gallery image 2", className: "" },
-	{ src: "/img/gallery-3.jpg", alt: "SEIC gallery image 3", className: "" },
-	{ src: "/img/gallery-4.jpg", alt: "SEIC gallery image 4", className: "" },
-	{ src: "/img/gallery-5.jpg", alt: "SEIC gallery image 5", className: "md:col-span-2" },
+	{ src: "/img/g1.jpg", alt: "SEIC gallery image 1", className: "md:col-span-2 md:row-span-2" },
+	{ src: "/img/g2.jpg", alt: "SEIC gallery image 2", className: "" },
+	{ src: "/img/g3.jpg", alt: "SEIC gallery image 3", className: "" },
+	{ src: "/img/g4.jpg", alt: "SEIC gallery image 4", className: "" },
+	{ src: "/img/g5.jpg", alt: "SEIC gallery image 5", className: "md:col-span-2" },
+	{ src: "/img/g6.jpg", alt: "SEIC gallery image 6", className: "" },
 ];
 
 export default function Gallery() {
@@ -14,10 +15,10 @@ export default function Gallery() {
 			<div className="mx-auto max-w-7xl">
 				<div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
 					<div>
-						<p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700">
+						<p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-yellow-600">
 							Our gallery
 						</p>
-						<h2 className="max-w-xl text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+						<h2 className="max-w-xl text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
 							Moments that inspire change.
 						</h2>
 					</div>
