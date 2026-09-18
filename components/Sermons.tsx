@@ -87,21 +87,18 @@ export default function Sermons() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {sermons.map((sermon) => (
-            <Link
+            <article
               key={sermon.id}
-              href="/sermon"
               className="sermon-preview-card group block overflow-hidden rounded-2xl border border-black/5 shadow-sm transition-shadow duration-300 hover:shadow-xl"
             >
               <div className="relative aspect-video w-full overflow-hidden bg-[#111111]">
-                <Image
-                  src={`https://img.youtube.com/vi/${sermon.youtubeId}/hqdefault.jpg`}
-                  alt={sermon.title}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                <iframe
+                  src={`https://www.youtube.com/embed/${sermon.youtubeId}`}
+                  title={sermon.title}
+                  className="absolute inset-0 h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
                 />
-                <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/40" />
-                <HiOutlinePlayCircle className="absolute inset-0 m-auto h-14 w-14 text-white/90 transition-transform duration-300 group-hover:scale-110 group-hover:text-yellow-500" />
                 <div className="absolute bottom-3 right-3 rounded bg-black/70 px-2 py-1 text-xs font-medium text-white">
                   {sermon.duration}
                 </div>
@@ -115,7 +112,7 @@ export default function Sermons() {
                   {sermon.title}
                 </h3>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
 
